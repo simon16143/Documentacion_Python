@@ -1,0 +1,258 @@
+
+1.-Generadores en python, con la función yield
+
+def  numeros_pares(args):
+     while args<10:
+        args+=1
+        if args % 2 == 0:
+            yield args
+
+        elif  args%2 != 0:
+            continue
+
+
+variable = numeros_pares(1)
+#Tambien se puede iterar sobre el objeto:
+#for i in variable:
+#   print(i)
+#imprimo el siguiente elemento.
+print(next(variable))
+
+
+
+#2.-Depurando,
+
+import pdb
+def haz_algo():
+    pdb.set_trace()
+return "No quiero"
+print(haz_algo())
+
+
+#3.-Funcion Any
+def any(iterable):
+    for element in iterable:
+        if element:
+            return True
+    return False
+iterable = "hola"
+print(any(iterable))
+
+
+#Tuplas:cuando se invoca un sublista con los dos puntos se establecen los limites de donde a donde se desea imprimir, sin incluir el
+#extremo mayor
+
+tupla=('a','b','c','d','e')
+print(tupla[1:3])
+tupla_a=('A',) + tupla[1:]
+print(tupla_a)
+#Modo de intercambiar valores de variables mediante tuplas
+a = 1
+b = 2
+a,b = b,a
+print(a,b)
+#Numeros Pseudoaleatorios con random, random.random genera numeros flotantes entre 0,0 y 1.0
+import random
+n = int(input("ingresa un numero"))
+def aleatorio(n):
+    lista = [0]*n
+    for i in range(n):
+        lista[i] = random.random()
+    print(lista)
+aleatorio(n)
+
+
+
+#Enumerate ejemplo para obtener el valor y la llave de un indice en una lista:
+numeros=[10,5,7,2,1]
+for key,value in enumerate(numeros):
+    print(key,value)
+
+
+
+
+   if a & b:
+
+       print("mi bit esta listo")
+
+
+
+"""
+#Desplazamiento binario <<izquierda o >>derecha; lo que hace es que en el sistema binario desplaza los valores activos a la derecha o a la izquierda
+var = 20
+varRight = var >> 1
+varLeft = var << 1
+print(var, varLeft, varRight)
+
+"""
+"""
+La funcion len recibe como parametro la lista y devuelve el numero de elementos que hay dentro de ella
+#ejemplo:
+a=[2,4,6,8,9]
+print(len(a))
+#Elimina un elemento en concreto de la lista en ese indice
+del a[2]
+#Los indice negativos dentro de una lista tambien son validos y expresan que se puede contar de derecha a izquierda
+#Tambien se puede intercambiar indices en python
+lista = [0,1,2,3,4,5]
+lista[0],lista[1] = lista[1],lista[2]
+print(lista)
+
+
+
+lista.insert(ubicación,valor)
+"""
+
+
+
+"""
+
+   Metodo sort()
+Python tambien tiene la forma de ordenar la lista de manera ascendente con el metodo sort(),el metodo sort() tambien arregla las letras dentro de una lista.
+miList = numeros de mi lista
+miList.sort()
+
+
+   Metodo reverse
+Se utiliza para invertir la lista.
+miList = numeros de mi lista
+miList.reverse()
+
+
+   Rodajas en python [:]
+A parte de permitir marcar el intervalo de la lista a la cual se desea acceder permiten guardar una lista totalmente nueva si modificar de manera dinamica su contenido..Ejemplo:
+lista1 = [1]
+lista2 = lista1
+lista1[0] = 2
+print(lista2)
+
+ejemplo2:
+Copiando toda la lista
+lista1 = [1]
+lista2 = lista1[:]
+lista1[0] = 2
+print(lista2)
+
+    Rodajas continuacion:
+    Con la instruccion del se puede eliminar mas de un elemento de una lista de la siguiente forma:
+miLista = [10, 8, 6, 4, 2]
+del miLista[1:3]
+print(miLista)
+   Uso de los operadores in y not in , para buscar en una lista
+miLista = [0, 3, 12, 8, 2]
+
+print(5 in miLista)
+print(5 not in miLista)
+print(12 in miLista)
+
+
+    Metodo clear:
+    permite eliminar una lista completa al igual que la instruccion del
+
+    lst = [1,2,3,4,56,8]
+    lst.clear()
+
+    Metodo Count:
+    permite contar cuantas veces se repite un elemento dentro de una lista
+    lst = [2,1,4,3,4,6,8]
+    print(lst.count(4))
+
+    Metodo copy:
+                        
+permite copiar las listas
+    lst = [1,2,3,4,5,6]
+    lst2 = lst.copy()
+
+       #Metodo pop:
+    Permite eliminar el ultimo elemento de la lista
+    lst = [1,2,3,4,5,6]
+    lst.pop()
+
+       #Metodo Remove:
+    lst.remove(indice)
+
+       #Instruccion del para borrar un elemento en particular
+    lst = [1,2,3,4,5,89,16]
+    del lst[-1]
+    print(lst)
+
+      #Metodo index:
+   indica la posicion en la cual se encuentra un elemento
+   lst = [1,2,3,4,5]
+   lst.index(1)
+
+      #metodo list para transformar una tupla en lista:
+   tupla = (1,2,3,4)
+   lista = list(tupla)
+
+      #Diccionarios en python:
+
+   diccionario = {
+     "nombre":"chanchito feliz",
+     "raza":"sharpei",
+     "edad":5
+   }
+
+para acceder a las propiedades:
+   print(diccionario[nombre"]
+
+      #Metodo get para acceder a los diccionarios:
+   print(diccionario.get('nombre'))
+
+
+
+
+"""
+dictionary = {
+        'aws':'Amazon',
+        'alphabet':'Google',
+        'microsoft':'Microsoft',
+        'apple':'Apple'
+
+
+"""        }
+#borra el elemento por su key
+dictionary.pop('apple')
+#.popitem()borra el ultimo elemento
+dictionary.popitem()
+print(dictionary)
+
+#Funcion dict:
+#Me permite realizar una copia al diccionario, es muy parecida a copy
+copy = dict(dictionary)
+copy_2 = dictionary.copy()
+print(copy,'\n',copy_2)
+"""
+"""
+ #Ejemplo Diccionario
+inventory = {'peras' : '250','manzanas' :
+        '260'}
+
+print(inventory.keys())
+print(inventory.items())
+
+       #Metodo para bucar un key dentro de un diccionario:
+if 'peras' in inventory:
+    print('good')
+
+
+        #Copia de Listas solo un slicing:
+colores = ['rojo', 'verde', 'naranja']
+
+copiaTodosColores = colores[:] # copia la lista completa
+copiaParteColores = colores[0:2] # copia parte de la lista
+
+
+
+#Uso de IN y NOT IN:
+
+miLista = ["A", "B", 1, 2]
+
+print("A" in miLista) # salida: True
+print("C" not in miLista) # salida: False
+print(2 not in miLista) # salidas: False
+
+      #Arreglo Bidimensional de filas y columnas:
+EMPTY = "Free"
+tablero = [[EMPTY for i in range(8)] for j in range(8)]
+print(tablero)
